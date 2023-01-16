@@ -188,7 +188,7 @@ async def get_mdisk(link, api=Config.MDISK_API):
 	return link
 
 async def replace_mdisk_link(text, api=Config.MDISK_API):
-    links = re.findall(r'https?://mdisk.me[^\s]+', text)
+    links = re.findall(r'https?://shrdsk.me[^\s]+', text)
     async for link in AsyncIter(links):
         mdisk_link = await get_mdisk(link, api)
         text = text.replace(link, mdisk_link)
